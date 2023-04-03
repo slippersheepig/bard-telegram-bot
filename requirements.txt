@@ -1,0 +1,3 @@
+GoogleBard
+aiohttp
+pyTelegramBotAPI
