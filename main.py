@@ -25,7 +25,7 @@ async def send_gpt(message):
     try:
         await bot.send_chat_action(message.chat.id, 'typing')
 #        await bot.send_message(message.chat.id, "思考中，请稍后")
-        response = chatbot.ask(message.text).replace(/_/gi, "\\_").replace("-", "\\-").replace("~", "\\~").replace("`", "\\`").replace(/\./g, "\\.")
+        response = chatbot.ask(message.text).replace("_", "\\_").replace("-", "\\-").replace("~", "\\~").replace("`", "\\`").replace(".", "\\.")
         await bot.reply_to(message, response["content"])
     except Exception as e:
         await bot.reply_to(message, e)
