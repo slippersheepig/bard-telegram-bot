@@ -8,7 +8,7 @@ token = environ.get("BARD_TOKEN")
 
 # init telegram bot
 bot_token = environ.get("TELEGRAM_BOT_TOKEN")
-bot = AsyncTeleBot(bot_token, parse_mode="MARKDOWNV2")
+bot = AsyncTeleBot(bot_token, parse_mode="HTML")
 
 # init chatbot
 chatbot = Chatbot(token)
@@ -26,7 +26,7 @@ async def send_gpt(message):
         await bot.send_chat_action(message.chat.id, 'typing')
 #        await bot.send_message(message.chat.id, "思考中，请稍后")
         response = chatbot.ask(message.text)
-        await bot.reply_to(message, response["content"].replace(/[]()~*`>+-=|{}.!/g, '\\$&'))
+        await bot.reply_to(message, response["content"])
     except Exception as e:
         await bot.reply_to(message, e)
 
