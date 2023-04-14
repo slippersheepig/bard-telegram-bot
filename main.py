@@ -8,7 +8,7 @@ token = environ.get("BARD_TOKEN")
 
 # init telegram bot
 bot_token = environ.get("TELEGRAM_BOT_TOKEN")
-bot = AsyncTeleBot(bot_token, parse_mode="HTML")
+bot = AsyncTeleBot(bot_token, parse_mode="MARKDOWN")
 
 # init chatbot
 chatbot = Chatbot(token)
