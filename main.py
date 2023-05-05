@@ -17,26 +17,16 @@ print("initial bot...")
 # define a message handler to send a message when the command /start is issued
 @bot.message_handler(commands=["start", "hello"])
 async def send_welcome(message):
-    await bot.reply_to(message, "This bot uses the Google BARD")
-    
-#define an async function to continuously display the input state
-async def display_typing(chat_id):
-    while True:
-        await bot.send_chat_action(chat_id, 'typing')
-        await asyncio.sleep(1)
+    await bot.reply_to(message, "This bot uses the google bard")
 
-# define a message handler to send the response and start the input state display
 @bot.message_handler(func=lambda m: True)
 async def send_gpt(message):
     print("get response...")
     try:
-        #start the input state display and chatbot ask simultaneously
-        typing_task = asyncio.create_task(display_typing(message.chat.id))
-        response_task = asyncio.create_task(chatbot.ask(message.text)())
-        await asyncio.gather(typing_task, response_task)
-        #stop the input state display and send the response
-        typing_task.cancel()
-        await bot.reply_to(message, response_task.result()["content"])
+        await bot.send_chat_action(message.chat.id, 'typing')
+#        await bot.send_message(message.chat.id, "思考中，请稍后")
+        response = chatbot.ask(message.text)
+        await bot.reply_to(message, response["content"])
     except Exception as e:
         await bot.reply_to(message, e)
 
