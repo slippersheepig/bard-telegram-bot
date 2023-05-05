@@ -23,7 +23,7 @@ async def send_welcome(message):
 async def display_typing(chat_id):
     while True:
         await bot.send_chat_action(chat_id, 'typing')
-        await asyncio.sleep(1)
+        await asyncio.sleep(4)
 
 # define a message handler to send the response and start the input state display
 @bot.message_handler(func=lambda m: True)
