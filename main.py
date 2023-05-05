@@ -32,7 +32,7 @@ async def send_gpt(message):
     try:
         #start the input state display and chatbot ask simultaneously
         typing_task = asyncio.create_task(display_typing(message.chat.id))
-        response_task = asyncio.create_task(chatbot.ask(message.text))
+        response_task = asyncio.create_task(chatbot.ask(message.text)())
         await asyncio.gather(typing_task, response_task)
         #stop the input state display and send the response
         typing_task.cancel()
