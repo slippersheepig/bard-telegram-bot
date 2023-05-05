@@ -36,7 +36,7 @@ async def send_gpt(message):
         response = chatbot.ask(message.text)
         # stop the input state display and send the response
         typing_task.cancel()
-        await bot.reply_to(message, response.content)
+        await bot.reply_to(message, response["content"])
     except Exception as e:
         await bot.reply_to(message, str(e))
 
