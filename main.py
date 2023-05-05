@@ -41,4 +41,4 @@ async def send_gpt(message):
         await bot.reply_to(message, str(e))
 
 # run the bot
-bot.run()
+asyncio.run(bot.polling())
