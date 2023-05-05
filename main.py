@@ -1,7 +1,7 @@
 from os import environ
 import asyncio
 from telebot.async_telebot import AsyncTeleBot
-from bard import Chatbot
+from Bard import Chatbot
 
 # get config
 token = environ.get("BARD_TOKEN")
