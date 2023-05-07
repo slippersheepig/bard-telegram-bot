@@ -27,8 +27,8 @@ async def send_gpt(message):
 #        await bot.send_message(message.chat.id, "思考中，请稍后")
         response = chatbot.ask(message.text)
         await bot.reply_to(message, response["content"])
-    except Exception as e:
-        await bot.reply_to(message, e)
+    except BaseException as e:
+        await bot.reply_to(message, str(e))
 
 # run the bot
 asyncio.run(bot.polling())
