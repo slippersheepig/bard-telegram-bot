@@ -1,3 +1,4 @@
+## !!!Deprecated!!!
 ### A branch for bot to interact with google bard ( comes with [acheong08](https://github.com/acheong08/Bard) )
 ### Authentication
 Go to https://bard.google.com/
