@@ -1,3 +1,4 @@
 GoogleBard
 aiohttp
 pyTelegramBotAPI
+nest_asyncio
