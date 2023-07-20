@@ -13,8 +13,8 @@ services:
     image: sheepgreen/bard
     container_name: bard
     environment:
-      - BARD__Secure-1PSID="value got above"
-      - BARD__Secure-1PSIDTS="value got above"
+      - BARD__Secure_1PSID="value got above"
+      - BARD__Secure_1PSIDTS="value got above"
       - TELEGRAM_BOT_TOKEN="your telegram bot token"
     restart: always
 ```
