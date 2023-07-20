@@ -1,5 +1,5 @@
 from os import environ
-import asyncio
+import nest_asyncio
 from telebot.async_telebot import AsyncTeleBot
 from Bard import Chatbot
 
@@ -32,4 +32,4 @@ async def send_gpt(message):
         await bot.reply_to(message, str(e))
 
 # run the bot
-asyncio.run(bot.polling())
+nest_asyncio.apply()
