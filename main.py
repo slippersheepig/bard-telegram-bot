@@ -4,14 +4,15 @@ from telebot.async_telebot import AsyncTeleBot
 from Bard import Chatbot
 
 # get config
-token = environ.get("BARD_TOKEN")
+Secure_1PSID = environ.get("BARD__Secure-1PSID")
+Secure_1PSIDTS = environ.get("BARD__Secure-1PSIDTS")
 
 # init telegram bot
 bot_token = environ.get("TELEGRAM_BOT_TOKEN")
 bot = AsyncTeleBot(bot_token, parse_mode="MARKDOWN")
 
 # init chatbot
-chatbot = Chatbot(token)
+chatbot = Chatbot(Secure_1PSID, Secure_1PSIDTS)
 print("initial bot...")
 
 # define a message handler to send a message when the command /start is issued
