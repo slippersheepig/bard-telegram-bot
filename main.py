@@ -18,7 +18,7 @@ async def send_welcome(message):
 
 @bot.message_handler(func=lambda m: True)
 async def send_gpt(message):
-    chatbot = await AsyncChatbot(Secure_1PSID, Secure_1PSIDTS)
+    chatbot = AsyncChatbot(Secure_1PSID, Secure_1PSIDTS)
     print("get response...")
     try:
         await bot.send_chat_action(message.chat.id, 'typing')
