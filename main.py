@@ -23,7 +23,7 @@ async def send_gpt(message):
     try:
         await bot.send_chat_action(message.chat.id, 'typing')
 #        await bot.send_message(message.chat.id, "思考中，请稍后")
-        response = await chatbot.ask(message.text)
+        response = await chatbot.create(message.text)
         await bot.reply_to(message, response["content"])
     except BaseException as e:
         await bot.reply_to(message, str(e))
