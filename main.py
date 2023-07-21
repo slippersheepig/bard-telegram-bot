@@ -1,7 +1,7 @@
 from os import environ
 import asyncio
 from telebot.async_telebot import AsyncTeleBot
-from Bard import AsyncChatbot
+from Bard import Chatbot
 
 # get config
 Secure_1PSID = environ.get("BARD__Secure_1PSID")
@@ -23,7 +23,7 @@ async def send_gpt(message):
     try:
         await bot.send_chat_action(message.chat.id, 'typing')
 #        await bot.send_message(message.chat.id, "思考中，请稍后")
-        response = await chatbot.create(message.text)
+        response = await chatbot.ask(message.text)
         await bot.reply_to(message, response["content"])
     except BaseException as e:
         await bot.reply_to(message, str(e))
