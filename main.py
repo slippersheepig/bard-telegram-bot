@@ -9,7 +9,7 @@ Secure_1PSIDTS = environ.get("BARD__Secure_1PSIDTS")
 
 # init telegram bot
 bot_token = environ.get("TELEGRAM_BOT_TOKEN")
-bot = AsyncTeleBot(bot_token, parse_mode="MARKDOWN")
+bot = AsyncTeleBot(bot_token, parse_mode="HTML")
 
 # define a message handler to send a message when the command /start is issued
 @bot.message_handler(commands=["start", "hello"])
